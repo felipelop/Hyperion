@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cliente_id: 
+  imovel_id: 
+  juros: 9.99
+  parcela: 9.99
+  entrada: 9.99
+  subsidio: 9.99
+  status: MyString
+
+two:
+  cliente_id: 
+  imovel_id: 
+  juros: 9.99
+  parcela: 9.99
+  entrada: 9.99
+  subsidio: 9.99
+  status: MyString

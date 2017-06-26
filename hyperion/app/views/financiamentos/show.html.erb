@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cliente:</strong>
+  <%= Cliente.find(@financiamento.cliente_id).nome %>
+</p>
+
+<p>
+  <strong>Imovel:</strong>
+  <%= Imovel.find(@financiamento.imovel_id).nome %>
+</p>
+
+<p>
+  <strong>Juros:</strong>
+  <%= @financiamento.juros %>
+</p>
+
+<p>
+  <strong>Parcela:</strong>
+  <%= @financiamento.parcela %>
+</p>
+
+<p>
+  <strong>Entrada:</strong>
+  <%= @financiamento.entrada %>
+</p>
+
+<p>
+  <strong>Subsidio:</strong>
+  <%= @financiamento.subsidio %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @financiamento.status %>
+</p>
+
+<p>
+  <strong>Meses:</strong>
+  <%= @financiamento.meses %>
+</p>
+
+<%= link_to 'Back', financiamentos_path %>

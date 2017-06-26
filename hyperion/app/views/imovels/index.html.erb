@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Imovels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Unidade</th>
+      <th>Valor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @imovels.each do |imovel| %>
+      <tr>
+        <td><%= imovel.nome %></td>
+        <td><%= imovel.unidade %></td>
+        <td><%= imovel.valor %></td>
+        <td><%= link_to 'Show', imovel %></td>
+        <td><%= link_to 'Edit', edit_imovel_path(imovel) %></td>
+        <td><%= link_to 'Destroy', imovel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Imovel', new_imovel_path %>

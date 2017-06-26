@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Financiamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Imovel</th>
+      <th>Juros</th>
+      <th>Parcela</th>
+      <th>Entrada</th>
+      <th>Subsidio</th>
+      <th>Status</th>
+      <th>Meses</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @financiamentos.each do |financiamento| %>
+      <tr>
+        <td><%= Cliente.find(financiamento.cliente_id).nome %></td>
+        <td><%= Imovel.find(financiamento.imovel_id).nome %></td>
+        <td><%= financiamento.juros %></td>
+        <td><%= financiamento.parcela %></td>
+        <td><%= financiamento.entrada %></td>
+        <td><%= financiamento.subsidio %></td>
+        <td><%= financiamento.status %></td>
+        <td><%= financiamento.meses %></td>
+        <td><%= link_to 'Show', financiamento %></td>
+        <td><%= link_to 'Destroy', financiamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Simulação', simulacao_index_path %>

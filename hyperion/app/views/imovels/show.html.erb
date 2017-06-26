@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @imovel.nome %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @imovel.unidade %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @imovel.valor %>
+</p>
+
+<%= link_to 'Edit', edit_imovel_path(@imovel) %> |
+<%= link_to 'Back', imovels_path %>

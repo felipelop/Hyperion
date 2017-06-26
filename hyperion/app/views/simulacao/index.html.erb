@@ -1,0 +1,54 @@
+<h1>Simulações</h1>
+
+<h1> Clientes </h1>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @clientes.each do |cliente| %>
+			<tr>
+				<td><%= cliente.id %></td>
+			    <td><%= cliente.nome %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<h1> Imoveis </h1>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Nome</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @imoveis.each do |imovel| %>
+		<tr>
+				<td><%= imovel.id %></td>
+		        <td><%= imovel.nome %></td>
+		</tr>
+		    <% end %>
+    </tbody>
+</table>
+<%= form_for(@financiamento) do |f| %>
+	<div class="field">
+	    <%= f.label :cliente_id %><br>
+	    <%= f.text_field :cliente_id %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :imovel_id %><br>
+	    <%= f.text_field :imovel_id %>
+	  </div>
+	  <div class="field">
+	    <%= f.label :meses %><br>
+	    <%= f.text_field :meses %>
+	  </div>
+	  <div class="actions">
+	    <%= f.submit %>
+	  </div>
+<% end %>

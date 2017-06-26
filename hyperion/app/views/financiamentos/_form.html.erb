@@ -1,0 +1,49 @@
+<%= form_for(@financiamento) do |f| %>
+  <% if @financiamento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@financiamento.errors.count, "error") %> prohibited this financiamento from being saved:</h2>
+
+      <ul>
+      <% @financiamento.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cliente_id %><br>
+    <%= f.text_field :cliente_id %>
+  </div>
+  <div class="field">
+    <%= f.label :imovel_id %><br>
+    <%= f.text_field :imovel_id %>
+  </div>
+  <div class="field">
+    <%= f.label :juros %><br>
+    <%= f.text_field :juros %>
+  </div>
+  <div class="field">
+    <%= f.label :parcela %><br>
+    <%= f.text_field :parcela %>
+  </div>
+  <div class="field">
+    <%= f.label :entrada %><br>
+    <%= f.text_field :entrada %>
+  </div>
+  <div class="field">
+    <%= f.label :subsidio %><br>
+    <%= f.text_field :subsidio %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :meses %><br>
+    <%= f.text_field :meses %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
