@@ -1,10 +1,30 @@
 class FinanciamentosController < ApplicationController
-  before_action :set_financiamento, only: [:show, :edit, :update, :destroy]
+  before_action :set_financiamento, only: [:show, :edit, :update, :destroy, :aceita, :recusa]
 
   # GET /financiamentos
   # GET /financiamentos.json
   def index
     @financiamentos = Financiamento.all
+  end
+
+  def aceita
+    @financiamento.status = "ACEITO"
+    @financiamento.save
+
+    respond_to do |format|
+        format.html { redirect_to @financiamento, notice: 'Financiamento was successfully updated.' }
+        format.json { render :show, status: :ok, location: @financiamento }
+    end
+  end
+
+  def recusa
+    @financiamento.status = "NAO_ACEITO"
+    @financiamento.save
+
+    respond_to do |format|
+        format.html { redirect_to @financiamento, notice: 'Financiamento was successfully updated.' }
+        format.json { render :show, status: :ok, location: @financiamento }
+    end
   end
 
   # GET /financiamentos/1
@@ -39,7 +59,7 @@ class FinanciamentosController < ApplicationController
       @financiamento.status = "NEGADO"
       @financiamento.meses = nil
     else
-      @financiamento.entrada = cliente.renda * 5
+      @financiamento.entrada = (cliente.renda * 5).round(2)
       if(cliente.idade >= 18 and cliente.idade < 26) 
         percentual_idade = 0.03
       elsif(cliente.idade >= 26 and cliente.idade < 35)
@@ -57,9 +77,9 @@ class FinanciamentosController < ApplicationController
         percentual_renda = 0.015
         @financiamento.juros = 0.01
       end
-      @financiamento.subsidio = (percentual_renda + percentual_idade)* imovel.valor
-      @financiamento.parcela = ((imovel.valor - @financiamento.subsidio - @financiamento.subsidio) *
-      (1 + @financiamento.juros**(Integer(@financiamento.meses/12))))/@financiamento.meses
+      @financiamento.subsidio = ((percentual_renda + percentual_idade)* imovel.valor).round(2)
+      @financiamento.parcela = (((imovel.valor - @financiamento.subsidio - @financiamento.subsidio) *
+      (1 + @financiamento.juros**(Integer(@financiamento.meses/12))))/@financiamento.meses).round(2)
       if(@financiamento.parcela > (cliente.renda/2))
         @financiamento.status = "INVIAVEL"
       else

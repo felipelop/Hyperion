@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="show--clientes">
 <p>
   <strong>Cpf:</strong>
   <%= @cliente.cpf %>
@@ -17,8 +17,14 @@
 
 <p>
   <strong>Renda:</strong>
-  <%= @cliente.renda %>
+  R$ <%= @cliente.renda %>
 </p>
 
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>
+<table>
+	<th class="botao botao--novo">
+	<%= link_to 'Editar', edit_cliente_path(@cliente) %> </th> 
+	<th class="botao botao--novo">
+	<%= link_to 'Voltar', clientes_path %></th>
+</table>
+
+</div>

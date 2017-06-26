@@ -1,6 +1,12 @@
-<h1>Editing Imovel</h1>
+<div class="edit--imovel">
+<h1>Atualizando Imóvel</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @imovel %> |
-<%= link_to 'Back', imovels_path %>
+<table>
+	<th class="botao botao--novo">
+	<%= link_to 'Detalhes', @imovels %> </th> 
+	<th class="botao botao--novo">
+	<%= link_to 'Voltar', imovels_path %></th>
+</table>
+</div>

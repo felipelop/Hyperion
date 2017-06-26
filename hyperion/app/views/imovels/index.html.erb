@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Imovels</h1>
+<h1>Lista de Imóveis</h1>
 
 <table>
   <thead>
@@ -8,7 +8,7 @@
       <th>Nome</th>
       <th>Unidade</th>
       <th>Valor</th>
-      <th colspan="3"></th>
+      <th class="noborder"  colspan="3"></th>
     </tr>
   </thead>
 
@@ -17,10 +17,10 @@
       <tr>
         <td><%= imovel.nome %></td>
         <td><%= imovel.unidade %></td>
-        <td><%= imovel.valor %></td>
-        <td><%= link_to 'Show', imovel %></td>
-        <td><%= link_to 'Edit', edit_imovel_path(imovel) %></td>
-        <td><%= link_to 'Destroy', imovel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>R$ <%= imovel.valor %></td>
+        <td class="botao"><%= link_to 'Detalhes', imovel %></td>
+        <td class="botao"><%= link_to 'Editar', edit_imovel_path(imovel) %></td>
+        <td class="botao"><%= link_to 'Destruir', imovel, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Imovel', new_imovel_path %>
+<div class="botao botao--novo">
+  <%= link_to 'Novo Imóvel', new_imovel_path %>
+</div>

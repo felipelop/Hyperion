@@ -1,6 +1,11 @@
-<h1>Editing Cliente</h1>
-
+<div class="edit--clientes">
+<h1>Atualizando Cliente</h1>
 <%= render 'form' %>
 
-<%= link_to 'Show', @cliente %> |
-<%= link_to 'Back', clientes_path %>
+<table>
+	<th class="botao botao--novo">
+	<%= link_to 'Detalhes', @cliente %> </th> 
+	<th class="botao botao--novo">
+	<%= link_to 'Voltar', clientes_path %></th>
+</table>
+</div>

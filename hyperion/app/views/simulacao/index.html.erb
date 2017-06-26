@@ -1,54 +1,62 @@
-<h1>Simulações</h1>
+<h1 style="text-align: center;">Simulações</h1>
 
-<h1> Clientes </h1>
-<table>
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @clientes.each do |cliente| %>
+
+<div class="coluna1">
+	<h1> Clientes </h1>
+	<table>
+		<thead>
 			<tr>
-				<td><%= cliente.id %></td>
-			    <td><%= cliente.nome %></td>
+				<th class="id">ID</th>
+				<th>Nome</th>
 			</tr>
-		<% end %>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+			<% @clientes.each do |cliente| %>
+				<tr>
+					<td class="id"><%= cliente.id %></td>
+				    <td><%= cliente.nome %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
 
-<h1> Imoveis </h1>
-<table>
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>Nome</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @imoveis.each do |imovel| %>
-		<tr>
-				<td><%= imovel.id %></td>
-		        <td><%= imovel.nome %></td>
-		</tr>
-		    <% end %>
-    </tbody>
-</table>
+<div class="coluna2">
+	<h1> Imóveis </h1>
+	<table>
+		<thead>
+			<tr>
+				<th class="id">ID</th>
+				<th>Nome</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @imoveis.each do |imovel| %>
+			<tr>
+					<td class="id"><%= imovel.id %></td>
+			        <td><%= imovel.nome %></td>
+			</tr>
+			    <% end %>
+	    </tbody>
+	</table>
+</div>
+
+<div class= "form">
 <%= form_for(@financiamento) do |f| %>
 	<div class="field">
-	    <%= f.label :cliente_id %><br>
+	    <%= f.label :cliente_id %> (ID)<br>
 	    <%= f.text_field :cliente_id %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :imovel_id %><br>
+	    <%= f.label :imovel_id %> (ID)<br>
 	    <%= f.text_field :imovel_id %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :meses %><br>
+	    Parcelas em <%= f.label :meses %><br>
 	    <%= f.text_field :meses %>
 	  </div>
 	  <div class="actions">
-	    <%= f.submit %>
+	    <%= f.submit "Simulação" %>
 	  </div>
 <% end %>
+</div>

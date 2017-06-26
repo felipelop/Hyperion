@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="show--financiamento">
 <p>
   <strong>Cliente:</strong>
   <%= Cliente.find(@financiamento.cliente_id).nome %>
@@ -17,17 +17,17 @@
 
 <p>
   <strong>Parcela:</strong>
-  <%= @financiamento.parcela %>
+  R$ <%= @financiamento.parcela %>
 </p>
 
 <p>
   <strong>Entrada:</strong>
-  <%= @financiamento.entrada %>
+  R$ <%= @financiamento.entrada %>
 </p>
 
 <p>
   <strong>Subsidio:</strong>
-  <%= @financiamento.subsidio %>
+  R$ <%= @financiamento.subsidio %>
 </p>
 
 <p>
@@ -40,4 +40,8 @@
   <%= @financiamento.meses %>
 </p>
 
-<%= link_to 'Back', financiamentos_path %>
+<table>
+  <th class="botao botao--novo">
+  <%= link_to 'Voltar', financiamentos_path %></th>
+</table>
+</div>

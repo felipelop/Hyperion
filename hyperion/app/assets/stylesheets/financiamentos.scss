@@ -1,3 +1,55 @@
 // Place all the styles related to the Financiamentos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+td, th {
+	border: 1px black solid;
+	width: 10%;
+	margin-left: 5px;
+	text-align: center;
+}
+
+.id {
+	width: 3%;
+}
+
+.noborder {
+	border: 0 black solid;
+}
+
+.botao {
+	border-radius: 10px;
+	background: #363535;
+	width: 5%;
+}
+
+.botao--novo {
+	width: 15%;
+	line-height: 30px;
+	text-align: center;
+}
+
+.botao a:link, .botao a:visited {
+	background: #363535;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.botao a:hover{
+	background: #363535;
+	color: #ffffff;
+	font-style:italic;
+}
+
+.show--financiamento, .edit--financiamento, .new--financiamento {
+        width: 50%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50p;
+
+        p {
+                line-height: 20px;
+                font-size: 20px;
+                text-align: left;
+        }
+}

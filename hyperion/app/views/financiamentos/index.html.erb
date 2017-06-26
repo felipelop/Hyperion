@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Financiamentos</h1>
+<h1>Lista de Financiamentos</h1>
 
 <table>
   <thead>
@@ -8,12 +8,12 @@
       <th>Cliente</th>
       <th>Imovel</th>
       <th>Juros</th>
-      <th>Parcela</th>
-      <th>Entrada</th>
-      <th>Subsidio</th>
+      <th>Parcela (R$)</th>
+      <th>Entrada (R$)</th>
+      <th>Subsidio (R$)</th>
       <th>Status</th>
       <th>Meses</th>
-      <th colspan="3"></th>
+      <th class="noborder" colspan="4"></th>
     </tr>
   </thead>
 
@@ -28,13 +28,21 @@
         <td><%= financiamento.subsidio %></td>
         <td><%= financiamento.status %></td>
         <td><%= financiamento.meses %></td>
-        <td><%= link_to 'Show', financiamento %></td>
-        <td><%= link_to 'Destroy', financiamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <% if financiamento.status == "SIMULACAO"%>
+          <td class="botao"><%= link_to 'Aceitar', controller: "financiamentos", action: "aceita", id: financiamento, data: {confirm: 'Tem certeza?'} %></td>
+          <td class="botao"><%= link_to 'Recusar', controller: "financiamentos", action: "recusa", id: financiamento, data: {confirm: 'Tem certeza?'} %></td>
+        <% else %>
+          <td class="noborder" colspan="2"></td>
+        <% end %>
+        <td class="botao"><%= link_to 'Detalhes', financiamento %></td>
+        <td class="botao"><%= link_to 'Destruir', financiamento, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'Simulação', simulacao_index_path %>
+<div class="botao botao--novo">
+  <%= link_to 'Simulação', simulacao_index_path %>
+</div>

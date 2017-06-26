@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :financiamentos
+  match 'financiamentos/:id/aceita', controller: 'financiamentos', action: 'aceita', via: 'get'
+  match 'financiamentos/:id/recusa', controller: 'financiamentos', action: 'recusa', via: 'get'
   resources :imovels
   resources :clientes
   resources :simulacao do

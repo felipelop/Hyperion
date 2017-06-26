@@ -28,7 +28,7 @@ class ImovelsController < ApplicationController
 
     respond_to do |format|
       if @imovel.save
-        format.html { redirect_to @imovel, notice: 'Imovel was successfully created.' }
+        format.html { redirect_to @imovel, notice: 'Imóvel criado com sucesso.' }
         format.json { render :show, status: :created, location: @imovel }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ImovelsController < ApplicationController
   def update
     respond_to do |format|
       if @imovel.update(imovel_params)
-        format.html { redirect_to @imovel, notice: 'Imovel was successfully updated.' }
+        format.html { redirect_to @imovel, notice: 'Imóvel atualizado com sucesso.' }
         format.json { render :show, status: :ok, location: @imovel }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ImovelsController < ApplicationController
   def destroy
     @imovel.destroy
     respond_to do |format|
-      format.html { redirect_to imovels_url, notice: 'Imovel was successfully destroyed.' }
+      format.html { redirect_to imovels_url, notice: 'Imóvel destruido com sucesso.' }
       format.json { head :no_content }
     end
   end

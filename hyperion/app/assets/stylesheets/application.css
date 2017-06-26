@@ -13,3 +13,94 @@
  *= require_tree .
  *= require_self
  */
+html {
+	height: 100%;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+header {
+	display: block;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wrapper-header {
+	height: 50px;
+	width: 100%;
+	background: #373536;
+}
+
+.aba {
+	font-size: 15px;
+	text-align: center;
+	background: #373536;
+	padding: 10px 0;
+	float: left;
+	width: 16%;
+	color: white;
+	margin-top: 5px;
+}
+
+.aba a:visited{
+	font-weight:bold;
+	font-style:italic;
+	color: white;
+	background: #373536;
+}
+
+.aba a:hover {
+	font-weight:bold;
+	font-style:italic;
+	color: #48CF24;
+	background: #373536;
+}
+
+.wrapper {
+        width: 85%;
+        height: 70%;
+        background: #dddddd;
+        color: black;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        position: relative;
+        margin-top: 75px;
+	overflow: auto;
+}
+
+body {
+	background: #79D578;
+	color: white;
+	height: 100%;
+	margin: 0;
+}
+
+.content {
+	height: 250px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+}
+
+.field--edit {
+        font-size: 15px;
+}
+
+.field--edit input {
+	width: 100%;
+}
+
+.actions--edit {
+        text-align: right;
+        margin-bottom: 15px;
+}

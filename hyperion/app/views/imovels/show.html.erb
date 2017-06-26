@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="show--imovel">
 <p>
   <strong>Nome:</strong>
   <%= @imovel.nome %>
@@ -12,8 +12,13 @@
 
 <p>
   <strong>Valor:</strong>
-  <%= @imovel.valor %>
+  R$ <%= @imovel.valor %>
 </p>
 
-<%= link_to 'Edit', edit_imovel_path(@imovel) %> |
-<%= link_to 'Back', imovels_path %>
+<table>
+	<th class="botao botao--novo">
+	<%= link_to 'Editar', edit_imovel_path(@imovel) %> </th> 
+	<th class="botao botao--novo">
+	<%= link_to 'Voltar', imovels_path %></th>
+</table>
+</div>
