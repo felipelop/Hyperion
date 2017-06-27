@@ -31,34 +31,33 @@ header {
 }
 
 .wrapper-header {
-	height: 50px;
+	height: 60px;
 	width: 100%;
-	background: #373536;
+	background: white;
 }
 
 .aba {
 	font-size: 15px;
 	text-align: center;
-	background: #373536;
+	background: white;
 	padding: 10px 0;
 	float: left;
 	width: 16%;
-	color: white;
+	color: black;
 	margin-top: 5px;
 }
 
-.aba a:visited{
-	font-weight:bold;
-	font-style:italic;
-	color: white;
-	background: #373536;
+.aba a:visited, .aba a:link{
+
+	color: black;
+	background: white;
 }
 
 .aba a:hover {
 	font-weight:bold;
 	font-style:italic;
 	color: #48CF24;
-	background: #373536;
+	background: white;
 }
 
 .wrapper {

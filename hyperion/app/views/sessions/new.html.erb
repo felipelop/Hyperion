@@ -1,3 +1,5 @@
+<div class="login">
+
 <%= form_for :session, url: sign_in_path do |f| %>
     <div class="field">
       <%= f.label :login %><br />
@@ -11,5 +13,7 @@
     <div class="actions">
       <%= f.submit "Log in" %>
     </div>
-  <p>New user? <%= link_to "Cadastrar!", new_user_path %></p>
+  <p>Novo usuário? <%= link_to "Cadastrar!", new_user_path %></p>
   <% end %>
+  
+</div>

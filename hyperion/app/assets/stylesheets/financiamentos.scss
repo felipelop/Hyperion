@@ -16,6 +16,44 @@ td, th {
 	border: 0 black solid;
 }
 
+.botao--acc{
+	border-radius: 10px;
+	background: #008B00;
+	width: 5%;
+	color:white;
+}
+
+.botao--acc a:link, .botao--acc a:visited {
+	background: #008B00;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.botao--acc a:hover{
+	background: #008B00;
+	color: #ffffff;
+	font-style:italic;
+}
+
+.botao--rec{
+	border-radius: 10px;
+	background: #EE0000;
+	width: 5%;
+	color:white;
+}
+
+.botao--rec a:link, .botao--rec a:visited {
+	background: #EE0000;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.botao--rec a:hover{
+	background:#EE0000;
+	color: #ffffff;
+	font-style:italic;
+}
+
 .botao {
 	border-radius: 10px;
 	background: #363535;
@@ -52,4 +90,24 @@ td, th {
                 font-size: 20px;
                 text-align: left;
         }
+}
+
+.negado{
+	background: #EE0000;
+}
+
+.aceito {
+	background: #008B00;
+}
+
+.nao_aceito {
+	background:#FF4500;
+}
+
+.simulacao {
+	background:#436EEE;
+}
+
+.inviavel{
+	 background:#CDCD00;
 }

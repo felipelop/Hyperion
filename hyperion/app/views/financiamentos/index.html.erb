@@ -26,12 +26,18 @@
         <td><%= financiamento.parcela %></td>
         <td><%= financiamento.entrada %></td>
         <td><%= financiamento.subsidio %></td>
-        <td><%= financiamento.status %></td>
+        <% case financiamento.status 
+        when "SIMULACAO"%><td class="simulacao"><%= financiamento.status %></td>
+        <% when "NEGADO" %><td class="negado"><%= financiamento.status %></td>
+        <% when "INVIAVEL" %><td class="inviavel"><%= financiamento.status %></td>
+        <% when "ACEITO" %><td class="aceito"><%= financiamento.status %></td>
+        <% when "NAO_ACEITO" %><td class="nao_aceito"><%= financiamento.status %></td>
+        <% end %>
         <td><%= financiamento.meses %></td>
         
         <% if financiamento.status == "SIMULACAO"%>
-          <td class="botao"><%= link_to 'Aceitar', controller: "financiamentos", action: "aceita", id: financiamento, data: {confirm: 'Tem certeza?'} %></td>
-          <td class="botao"><%= link_to 'Recusar', controller: "financiamentos", action: "recusa", id: financiamento, data: {confirm: 'Tem certeza?'} %></td>
+          <td class="botao--acc"><%= link_to 'Aceitar', controller: "financiamentos", action: "aceita", id: financiamento, data: {confirm: 'Tem certeza?'} %></td>
+          <td class="botao--rec"><%= link_to 'Recusar', controller: "financiamentos", action: "recusa", id: financiamento, data: {confirm: 'Tem certeza?'} %></td>
         <% else %>
           <td class="noborder" colspan="2"></td>
         <% end %>

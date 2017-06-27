@@ -2,7 +2,7 @@
   <header>
     <div>
       <nav>
-      	  <div class="aba">HYPERION</div>
+      	  <div class="aba"><%=image_tag("hyperion.png", height: '32', width: '200')=%></div>
       	  <% if logged_in? %>
             <div class="aba"><%= link_to 'Clientes', clientes_path %></div>
             <div class="aba"><%= link_to 'Imóveis', imovels_path %></div>

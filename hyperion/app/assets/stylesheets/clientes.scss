@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+th{
+	background:#7F7F7F;
+}
+
 td, th {
 	border: 1px black solid;
 	width: 10%;
@@ -15,6 +19,7 @@ td, th {
 
 .noborder {
 	border: 0 black solid;
+	background:transparent;
 }
 
 .botao {
