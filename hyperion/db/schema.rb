@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170624203928) do
+ActiveRecord::Schema.define(version: 20170627003251) do
 
   create_table "clientes", force: :cascade do |t|
     t.string   "cpf"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 20170624203928) do
     t.decimal  "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "login"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

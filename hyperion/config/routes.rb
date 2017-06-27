@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'users/new'
+
   resources :financiamentos
   match 'financiamentos/:id/aceita', controller: 'financiamentos', action: 'aceita', via: 'get'
   match 'financiamentos/:id/recusa', controller: 'financiamentos', action: 'recusa', via: 'get'
@@ -7,6 +11,13 @@ Rails.application.routes.draw do
   resources :simulacao do
     get 'index', :on => :collection
   end
+  
+  resources :users
+  get    'sign_in'   => 'sessions#new'
+  post   'sign_in'   => 'sessions#create'
+  delete 'sign_out'  => 'sessions#destroy'
+  
+  root 'sessions#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
